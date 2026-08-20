@@ -1,0 +1,191 @@
+.drone-status-widget {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(27, 94, 32, 0.08);
+  border-top: 4px solid #1b5e20;
+  margin-bottom: 24px;
+}
+
+.drone-status-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.drone-status-title h3 {
+  font-size: 1.2rem;
+  color: #1a1a1a;
+  margin: 0;
+  flex: 1;
+}
+
+.title-icon {
+  color: #1b5e20;
+}
+
+.status-indicator {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+.status-indicator.flying {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+  border: 1px solid #81c784;
+  animation: pulse 2s infinite;
+}
+
+.status-indicator.idle {
+  background-color: #f5f5f5;
+  color: #666;
+  border: 1px solid #e0e0e0;
+}
+
+.drone-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.metric-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  border-color: #1b5e20;
+  background: linear-gradient(135deg, #f0f7f0 0%, #ffffff 100%);
+}
+
+.metric-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-header svg {
+  color: #1b5e20;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #e0e0e0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.progress-fill.battery-good {
+  background: linear-gradient(90deg, #4caf50 0%, #81c784 100%);
+}
+
+.progress-fill.battery-warning {
+  background: linear-gradient(90deg, #f57c00 0%, #ffb74d 100%);
+}
+
+.progress-fill.battery-critical {
+  background: linear-gradient(90deg, #d32f2f 0%, #ef5350 100%);
+}
+
+.battery-good {
+  color: #1b5e20 !important;
+}
+
+.battery-warning {
+  color: #f57c00 !important;
+}
+
+.battery-critical {
+  color: #d32f2f !important;
+}
+
+.drone-controls {
+  display: flex;
+  gap: 12px;
+}
+
+.control-button {
+  flex: 1;
+  padding: 12px 20px;
+  border: 2px solid #1b5e20;
+  background: white;
+  color: #1b5e20;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.control-button:hover {
+  background: #1b5e20;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.15);
+}
+
+.control-button.active {
+  background: linear-gradient(135deg, #1b5e20 0%, #2d7f3e 100%);
+  color: white;
+  border-color: #0d3b1a;
+  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.2);
+}
+
+.control-button.active:hover {
+  background: linear-gradient(135deg, #0d3b1a 0%, #1b5e20 100%);
+}
+
+@media (max-width: 768px) {
+  .drone-status-widget {
+    padding: 16px;
+  }
+
+  .drone-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-value {
+    font-size: 1.2rem;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}

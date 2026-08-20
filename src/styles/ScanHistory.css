@@ -1,0 +1,199 @@
+.scan-history {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(27, 94, 32, 0.08);
+  margin-top: 24px;
+}
+
+.scan-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.scan-history-header h2 {
+  font-size: 1.2rem;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.scan-count {
+  background: #e8f5e9;
+  color: #1b5e20;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.scan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.scan-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: #fafafa;
+  border-radius: 10px;
+  border-left: 4px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.scan-item:hover {
+  background: #f0f0f0;
+  border-left-color: #1b5e20;
+  transform: translateX(4px);
+}
+
+.scan-item.scan-completed {
+  border-left-color: #4caf50;
+  background: linear-gradient(90deg, rgba(76, 175, 80, 0.05) 0%, transparent 100%);
+}
+
+.scan-item.scan-ongoing {
+  border-left-color: #f57c00;
+  background: linear-gradient(90deg, rgba(245, 124, 0, 0.05) 0%, transparent 100%);
+  animation: pulse 2s infinite;
+}
+
+.scan-status-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 8px;
+  color: #1b5e20;
+}
+
+.scan-item.scan-ongoing .scan-status-icon {
+  color: #f57c00;
+}
+
+.scan-item.scan-completed .scan-status-icon {
+  color: #4caf50;
+}
+
+.scan-details {
+  flex: 1;
+}
+
+.scan-details h3 {
+  font-size: 1rem;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.scan-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.meta-item svg {
+  color: #1b5e20;
+}
+
+.scan-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  min-width: 100px;
+  text-align: right;
+}
+
+.scan-date {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.scan-duration {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.scan-status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.scan-status-badge.completed {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+  border: 1px solid #81c784;
+}
+
+.scan-status-badge.ongoing {
+  background-color: #fff3e0;
+  color: #e65100;
+  border: 1px solid #ffb74d;
+}
+
+.empty-scan-history {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+}
+
+.empty-scan-history p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .scan-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .scan-info {
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .scan-status-badge {
+    align-self: flex-start;
+  }
+
+  .scan-meta {
+    flex-wrap: wrap;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
