@@ -11,6 +11,8 @@ import {
   Menu,
   X,
   Globe,
+  Video,
+  Flame,
 } from "lucide-react";
 import "../styles/Navbar.css";
 
@@ -64,6 +66,24 @@ const Navbar = () => {
           >
             <MapPin size={20} />
             <span>{t("farmer_data")}</span>
+          </a>
+
+          <a
+            href="/live-feed"
+            className="nav-link"
+            onClick={() => setShowMenu(false)}
+          >
+            <Video size={20} />
+            <span>{t("live_feed")}</span>
+          </a>
+
+          <a
+            href="/heatmap"
+            className="nav-link"
+            onClick={() => setShowMenu(false)}
+          >
+            <Flame size={20} />
+            <span>{t("heatmap")}</span>
           </a>
 
           <a
