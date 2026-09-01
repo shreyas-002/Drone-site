@@ -7,6 +7,8 @@ import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import DroneSettings from "./pages/DroneSettings";
 import FieldManagement from "./pages/FieldManagement";
+import LiveFeed from "./pages/LiveFeed";
+import Heatmap from "./pages/Heatmap";
 import "./styles/global.css";
 
 // Protected Route Component
@@ -71,6 +73,22 @@ const AppContent = () => {
           element={
             <ProtectedRoute>
               <FieldManagement />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/live-feed"
+          element={
+            <ProtectedRoute>
+              <LiveFeed />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/heatmap"
+          element={
+            <ProtectedRoute>
+              <Heatmap />
             </ProtectedRoute>
           }
         />
